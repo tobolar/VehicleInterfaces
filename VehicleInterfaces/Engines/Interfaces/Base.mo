@@ -18,7 +18,7 @@ public
     "Connection for the engine accessories"
     annotation (Placement(transformation(extent={{-110,-10},{-90,10}})));
   Modelica.Mechanics.MultiBody.Interfaces.FlangeWithBearing transmissionFlange(
-    final includeBearingConnector=includeTransmissionBearing or usingMultiBodyTransmission)
+    final includeBearingConnector=true)
     "Connection to the transmission" annotation (Placement(transformation(
           extent={{90,-10},{110,10}})));
   Modelica.Mechanics.MultiBody.Interfaces.Frame_a engineMount if
@@ -41,19 +41,17 @@ public
         origin={-100,22},
         extent={{-8,-6},{8,6}},
         rotation=270)));
-  Mechanics.MultiBody.MultiBodyEnd end_2(final includeBearingConnector=
-        includeTransmissionBearing or usingMultiBodyTransmission)
-    annotation (Placement(transformation(
-        origin={100,22},
-        extent={{-8,-6},{8,6}},
-        rotation=270)));
+  Mechanics.MultiBody.MultiBodyEndRooted multiBodyEndRooted annotation (Placement(transformation(
+        extent={{-6,-8},{6,8}},
+        rotation=-90,
+        origin={100,22})));
 equation
-  connect(end_2.flange, transmissionFlange) annotation (Line(
-      points={{100,19.3333},{100,0}},
-      color={135,135,135},
-      thickness=0.5));
   connect(end_1.flange, accessoryFlange) annotation (Line(
       points={{-100,19.3333},{-100,0}},
+      color={135,135,135},
+      thickness=0.5));
+  connect(multiBodyEndRooted.flange, transmissionFlange) annotation (Line(
+      points={{100,20},{100,0}},
       color={135,135,135},
       thickness=0.5));
   annotation (
@@ -65,10 +63,6 @@ equation
           pattern=LinePattern.Dot),
         Rectangle(
           extent={{-18,112},{6,88}},
-          lineColor={255,128,0},
-          pattern=LinePattern.Dot),
-        Rectangle(
-          extent={{92,28},{108,16}},
           lineColor={255,128,0},
           pattern=LinePattern.Dot),
         Rectangle(

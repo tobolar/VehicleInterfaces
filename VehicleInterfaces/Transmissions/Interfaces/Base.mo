@@ -13,7 +13,7 @@ protected
 
 public
   Modelica.Mechanics.MultiBody.Interfaces.FlangeWithBearing engineFlange(
-    final includeBearingConnector=includeEngineBearing or usingMultiBodyEngine)
+    final includeBearingConnector=true)
     "Connection to the engine"
     annotation (Placement(transformation(extent={{-110,-10},{-90,10}})));
   Modelica.Mechanics.MultiBody.Interfaces.FlangeWithBearing drivelineFlange(
@@ -31,12 +31,6 @@ public
         origin={-100,60},
         extent={{-20,-20},{20,20}},
         rotation=90)));
-  Mechanics.MultiBody.MultiBodyEnd end_1(
-    final includeBearingConnector=includeEngineBearing or usingMultiBodyEngine)
-    annotation (Placement(transformation(
-        origin={-100,22},
-        extent={{-8,-6},{8,6}},
-        rotation=270)));
   Mechanics.MultiBody.MultiBodyEnd end_2(
     final includeBearingConnector=includeDrivelineBearing or usingMultiBodyDriveline)
     annotation (Placement(transformation(
@@ -44,13 +38,17 @@ public
         extent={{-8,-6},{8,6}},
         rotation=270)));
 
+  Mechanics.MultiBody.MultiBodyEndRooted multiBodyEndRooted annotation (Placement(transformation(
+        extent={{6,-8},{-6,8}},
+        rotation=90,
+        origin={-100,22})));
 equation
-  connect(end_1.flange, engineFlange) annotation (Line(
-      points={{-100,19.3333},{-100,0}},
-      color={135,135,135},
-      thickness=0.5));
   connect(end_2.flange, drivelineFlange) annotation (Line(
       points={{100,19.3333},{100,0}},
+      color={135,135,135},
+      thickness=0.5));
+  connect(multiBodyEndRooted.flange, engineFlange) annotation (Line(
+      points={{-100,20},{-100,0}},
       color={135,135,135},
       thickness=0.5));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
@@ -61,10 +59,6 @@ equation
           pattern=LinePattern.Dot),
         Rectangle(
           extent={{92,28},{108,16}},
-          lineColor={255,128,0},
-          pattern=LinePattern.Dot),
-        Rectangle(
-          extent={{-108,28},{-92,16}},
           lineColor={255,128,0},
           pattern=LinePattern.Dot)}),
     Documentation(info="<html>
