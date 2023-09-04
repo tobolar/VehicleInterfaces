@@ -2,15 +2,15 @@ within VehicleInterfaces.Brakes.Interfaces;
 partial model Base "Base interface definition for a brakes"
 
   parameter Boolean usingMultiBodyChassis=false
-    "=true, if using a MultiBody chassis with a 1D driveline"
-    annotation (Dialog(tab="Advanced"));
+    "= true, if connecting to a MultiBody chassis"
+    annotation (Dialog(tab="Advanced", group="Only for 1D brakes", enable=not includeWheelBearings));
 protected
   parameter Boolean includeBrakePedal=false "Include the brake pedal connection";
   parameter Boolean includeWheelBearings=false "Include the wheel bearing connectors";
 
 public
-  Modelica.Mechanics.Translational.Interfaces.Flange_a brakePedal if
-    includeBrakePedal "Brake pedal connection (optional)"
+  Modelica.Mechanics.Translational.Interfaces.Flange_a brakePedal
+    if includeBrakePedal "Brake pedal connection (optional)"
     annotation (Placement(transformation(extent={{-10,110},{10,90}})));
   VehicleInterfaces.Interfaces.ControlBus controlBus "Control signal bus"
     annotation (Placement(transformation(

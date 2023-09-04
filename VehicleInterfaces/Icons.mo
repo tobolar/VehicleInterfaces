@@ -4,8 +4,9 @@ package Icons "Collection of icons"
 
   partial model Accessories "Icon for an accessories subsystem"
 
-    annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-              -100},{100,100}}), graphics={
+    annotation (
+      Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}),
+        graphics={
           Rectangle(
             extent={{-100,100},{100,-100}},
             lineColor={0,0,0},
@@ -78,8 +79,6 @@ package Icons "Collection of icons"
           Text(
             extent={{-100,-50},{100,-90}},
             textColor={0,0,255},
-            fillColor={255,255,0},
-            fillPattern=FillPattern.Solid,
             textString="%name")}),
       Documentation(info="<html>
 <p>
@@ -90,10 +89,13 @@ This partial class is intended to design a default icon for an <em>accessorier a
 
   partial model Atmosphere "Icon for an atmosphere"
 
-    annotation (Icon(coordinateSystem(
+    annotation (
+      Icon(
+        coordinateSystem(
           preserveAspectRatio=false,
           extent={{-200,-100},{200,100}},
-          grid={2,2}), graphics={
+          grid={2,2}),
+        graphics={
           Rectangle(
             extent={{-200,100},{200,-100}},
             lineColor={0,0,255},
@@ -179,10 +181,12 @@ This partial class is intended to design a default icon for an <em>atmosphere</e
   partial model Battery "Icon for a battery subsystem"
 
     annotation (
-      Icon(coordinateSystem(
+      Icon(
+        coordinateSystem(
           preserveAspectRatio=false,
           extent={{-100,-100},{100,100}},
-          grid={1,1}), graphics={
+          grid={1,1}),
+        graphics={
           Rectangle(
             extent={{-100,100},{100,-100}},
             lineColor={0,0,0},
@@ -203,8 +207,6 @@ This partial class is intended to design a default icon for an <em>atmosphere</e
           Text(
             extent={{-100,100},{100,62}},
             textColor={0,0,255},
-            fillColor={255,255,0},
-            fillPattern=FillPattern.Solid,
             textString="%name")}),
       Documentation(info="<html>
 <p>
@@ -215,8 +217,9 @@ This partial class is intended to design a default icon for a <em>batery model</
 
   partial model Brakes "Icon for a brakes subsystem"
 
-    annotation (Icon(coordinateSystem(preserveAspectRatio=true,  extent={{-100,
-              -100},{100,100}}), graphics={
+    annotation (
+      Icon(coordinateSystem(preserveAspectRatio=true,  extent={{-100,-100},{100,100}}),
+        graphics={
           Rectangle(
             extent={{-100,100},{100,-100}},
             lineColor={0,0,0},
@@ -265,8 +268,6 @@ This partial class is intended to design a default icon for a <em>batery model</
           Text(
             extent={{-100,-50},{100,-90}},
             textColor={0,0,255},
-            fillColor={255,255,0},
-            fillPattern=FillPattern.Solid,
             textString="%name"),
           Polygon(
             points={{-88,-20},{-88,20},{-80,48},{-48,44},{-48,-44},{-80,-46},{
@@ -288,7 +289,8 @@ This partial class is intended to design a default icon for a <em>batery model</
             thickness=0.5),
           Line(
             points={{-66,-10},{-80,-10}},
-            thickness=0.5)}),      Documentation(info="<html>
+            thickness=0.5)}),
+      Documentation(info="<html>
 <p>
 This partial class is intended to design a default icon for a <em>brakes assembly</em>.
 </p>
@@ -434,8 +436,6 @@ This partial class is intended to design a default icon for a <em>brakes assembl
           Text(
             extent={{-143,-64},{146,-97}},
             textColor={0,0,255},
-            fillColor={255,255,0},
-            fillPattern=FillPattern.Solid,
             textString="%name")}),
       Documentation(info="<html>
 <p>
@@ -446,8 +446,9 @@ This partial class is intended to design a default icon for a <em>chassis assemb
 
   partial model Controller "Icon for a controller subsystem"
 
-    annotation (Icon(coordinateSystem(preserveAspectRatio=true,  extent={{-100,
-              -100},{100,100}}), graphics={
+    annotation (
+      Icon(coordinateSystem(preserveAspectRatio=true,  extent={{-100,-100},{100,100}}),
+        graphics={
           Rectangle(
             extent={{-100,100},{100,-100}},
             lineColor={0,0,0},
@@ -648,8 +649,9 @@ This partial class is intended to design a default icon for <em>controllers</em>
 
   partial model DataDictionary "Icon for a data dictionary"
 
-    annotation (                         Icon(coordinateSystem(preserveAspectRatio=false,
-            extent={{-100,-100},{100,100}}), graphics={
+    annotation (
+      Icon(coordinateSystem(preserveAspectRatio=false,extent={{-100,-100},{100,100}}),
+        graphics={
           Ellipse(
             extent={{-60,-60},{60,-100}},
             lineColor={0,0,255},
@@ -710,8 +712,6 @@ This partial class is intended to design a default icon for <em>controllers</em>
           Text(
             extent={{-150,140},{150,100}},
             textColor={0,0,255},
-            fillColor={255,255,0},
-            fillPattern=FillPattern.Solid,
             textString="%name")}),
       Documentation(info="<html>
 <p>
@@ -723,10 +723,12 @@ This partial class is intended to design a default icon for a <em>data dictionar
   partial model Driveline "Icon for a driveline subsystem"
 
     annotation (
-      Icon(coordinateSystem(
+      Icon(
+        coordinateSystem(
           preserveAspectRatio=false,
           extent={{-100,-100},{100,100}},
-          grid={1,1}), graphics={
+          grid={1,1}),
+        graphics={
           Rectangle(
             extent={{-100,100},{100,-100}},
             lineColor={0,0,0},
@@ -755,8 +757,6 @@ This partial class is intended to design a default icon for a <em>data dictionar
           Text(
             extent={{-100,-55},{100,-95}},
             textColor={0,0,255},
-            fillColor={255,255,0},
-            fillPattern=FillPattern.Solid,
             textString="%name"),
           Ellipse(
             extent={{-12,25},{38,-25}},
@@ -793,8 +793,9 @@ This partial class is intended to design a default icon for a <em>driveline asse
 
   partial model DriverEnvironment "Icon for a driver environment subsystem"
 
-    annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-              -100},{100,100}}), graphics={
+    annotation (
+      Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}),
+        graphics={
           Rectangle(
             extent={{-100,100},{100,-100}},
             lineColor={0,0,0},
@@ -845,8 +846,6 @@ This partial class is intended to design a default icon for a <em>driveline asse
           Text(
             extent={{-100,-50},{100,-90}},
             textColor={0,0,255},
-            fillColor={255,255,0},
-            fillPattern=FillPattern.Solid,
             textString="%name")}), Documentation(info="<html>
 <p>
 This partial class is intended to design a default icon for a <em>driver environment</em>.
@@ -856,20 +855,22 @@ This partial class is intended to design a default icon for a <em>driver environ
 
   partial model Driver "Icon for a driver subsystem"
 
-    annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-              -100},{100,100}}), graphics={
+    annotation (
+      Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}),
+        graphics={
           Rectangle(
             extent={{-100,100},{100,-100}},
             lineColor={0,0,0},
             fillColor={255,255,255},
             fillPattern=FillPattern.Solid),
-          Bitmap(extent={{-70,-60},{82,96}}, fileName="modelica://VehicleInterfaces/Resources/Images/Icons/driver.jpg"),
+          Bitmap(
+            extent={{-70,-60},{82,96}},
+            fileName="modelica://VehicleInterfaces/Resources/Images/Icons/driver.jpg"),
           Text(
             extent={{-100,-50},{100,-90}},
             textColor={0,0,255},
-            fillColor={255,255,0},
-            fillPattern=FillPattern.Solid,
-            textString="%name")}), Documentation(info="<html>
+            textString="%name")}),
+      Documentation(info="<html>
 <p>
 This partial class is intended to design a default icon for a <em>driver model</em>.
 </p>
@@ -879,11 +880,12 @@ This partial class is intended to design a default icon for a <em>driver model</
   partial model ElectricMotor "Icon for an electric drive subsystem"
 
     annotation (
-      Icon(coordinateSystem(
+      Icon(
+        coordinateSystem(
           preserveAspectRatio=false,
           extent={{-100,-100},{100,100}},
           grid={1,1}),
-          graphics={
+        graphics={
           Rectangle(
             extent={{-100,100},{100,-100}},
             lineColor={0,0,0},
@@ -918,8 +920,6 @@ This partial class is intended to design a default icon for a <em>driver model</
           Text(
             extent={{-100,-55},{100,-95}},
             textColor={0,0,255},
-            fillColor={255,255,0},
-            fillPattern=FillPattern.Solid,
             textString="%name")}),
       Documentation(info="<html>
 <p>
@@ -930,14 +930,17 @@ This partial class is intended to design a default icon for an <em>electric moto
 
   partial model Empty "Icon for an empty component"
 
-    annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-              -100},{100,100}}), graphics={Ellipse(
+    annotation (
+      Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}),
+        graphics={
+        	Ellipse(
             extent={{-100,100},{100,-100}},
             lineColor={255,0,0},
             lineThickness=1), Line(
             points={{-70,-70},{70,70}},
             color={255,0,0},
-            thickness=1)}), Documentation(info="<html>
+            thickness=1)}),
+      Documentation(info="<html>
 <p>
 This partial class is intended to design a default icon for an <em>empty element</em>, i.e. for element which has no influence on the overall model.
 </p>
@@ -946,8 +949,9 @@ This partial class is intended to design a default icon for an <em>empty element
 
   partial model Engine "Icon for an engine subsystem"
 
-    annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-              -100},{100,100}}), graphics={
+    annotation (
+      Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}),
+        graphics={
           Rectangle(
             extent={{-100,100},{100,-100}},
             lineColor={0,0,0},
@@ -1006,9 +1010,8 @@ This partial class is intended to design a default icon for an <em>empty element
           Text(
             extent={{-100,-50},{100,-90}},
             textColor={0,0,255},
-            fillColor={255,255,0},
-            fillPattern=FillPattern.Solid,
-            textString="%name")}), Documentation(info="<html>
+            textString="%name")}),
+      Documentation(info="<html>
 <p>
 This partial class is intended to design a default icon for a <em>engine assembly</em>.
 </p>
@@ -1034,8 +1037,6 @@ This partial class is intended to design a default icon for a <em>engine assembl
           Text(
             extent={{-150,20},{150,-20}},
             textColor={0,0,255},
-            fillColor={255,255,0},
-            fillPattern=FillPattern.Solid,
             textString="%name"),
           Line(points={{-112,70},{-112,60},{-92,50},{-132,30},{-92,10},{-132,-10},
                 {-92,-30},{-132,-50},{-112,-60},{-112,-70}}),
@@ -1058,10 +1059,13 @@ This partial class is intended to design a default icon for a model of <em>multi
 
   partial model Road "Icon for a road"
 
-    annotation (Icon(coordinateSystem(
+    annotation (
+      Icon(
+        coordinateSystem(
           preserveAspectRatio=false,
           extent={{-200,-100},{200,100}},
-          grid={2,2}), graphics={
+          grid={2,2}),
+        graphics={
           Rectangle(
             extent={{-200,100},{200,-100}},
             lineColor={0,0,255},
@@ -1096,7 +1100,8 @@ This partial class is intended to design a default icon for a model of <em>multi
             lineColor={0,0,255},
             pattern=LinePattern.None,
             fillColor={255,255,255},
-            fillPattern=FillPattern.Solid)}), Documentation(info="<html>
+            fillPattern=FillPattern.Solid)}),
+      Documentation(info="<html>
 <p>
 This partial class is intended to design a default icon for a <em>road</em>.
 </p>
@@ -1129,10 +1134,12 @@ to highlight such a particular sub-bus.
   partial model SingleMount "Icon for a single mounting subsystem"
 
     annotation (
-      Icon(coordinateSystem(
+      Icon(
+        coordinateSystem(
           preserveAspectRatio=false,
           extent={{-100,-100},{100,100}},
-          grid={1,1}), graphics={
+          grid={1,1}),
+        graphics={
           Rectangle(
             extent={{-100,100},{100,-100}},
             lineColor={0,0,0},
@@ -1141,8 +1148,6 @@ to highlight such a particular sub-bus.
           Text(
             extent={{-100,20},{100,-20}},
             textColor={0,0,255},
-            fillColor={255,255,0},
-            fillPattern=FillPattern.Solid,
             textString="%name"),
           Line(points={{0,70},{0,60},{20,50},{-20,30},{20,10},{-20,-10},{20,-30},
                 {-20,-50},{0,-60},{0,-90}}),
@@ -1178,8 +1183,6 @@ This partial class is intended to design a default icon for a model of <em>singl
           Text(
             extent={{-150,20},{150,-20}},
             textColor={0,0,255},
-            fillColor={255,255,0},
-            fillPattern=FillPattern.Solid,
             textString="%name"),
           Line(points={{-80,70},{-80,60},{-60,50},{-100,30},{-60,10},{-100,-10},
                 {-60,-30},{-100,-50},{-80,-60},{-80,-70}}),
@@ -1200,8 +1203,9 @@ This partial class is intended to design a default icon for a model of <em>two m
 
   partial model Transmission "Icon for a transmission subsystem"
 
-    annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-              -100},{100,100}}), graphics={
+    annotation (
+      Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}),
+        graphics={
           Rectangle(
             extent={{-100,100},{100,-100}},
             lineColor={0,0,0},
@@ -1235,9 +1239,8 @@ This partial class is intended to design a default icon for a model of <em>two m
           Text(
             extent={{-100,-50},{100,-90}},
             textColor={0,0,255},
-            fillColor={255,255,0},
-            fillPattern=FillPattern.Solid,
-            textString="%name")}), Documentation(info="<html>
+            textString="%name")}),
+      Documentation(info="<html>
 <p>
 This partial class is intended to design a default icon for a <em>transmission assembly</em>.
 </p>

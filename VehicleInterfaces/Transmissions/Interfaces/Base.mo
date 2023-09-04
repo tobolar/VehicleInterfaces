@@ -1,11 +1,12 @@
 within VehicleInterfaces.Transmissions.Interfaces;
 partial model Base "Basic interface definition for a transmission"
+
   parameter Boolean usingMultiBodyEngine=false
-    "=true, if using MultiBody engine with a 1D transmission"
-    annotation (Dialog(tab="Advanced"));
+    "= true, if connecting to a MultiBody engine"
+    annotation (Dialog(tab="Advanced", group="Only for 1D transmission", enable=not includeEngineBearing));
   parameter Boolean usingMultiBodyDriveline=false
-    "=true, if using a MultiBody driveline with a 1D transmission"
-    annotation (Dialog(tab="Advanced"));
+    "= true, if connecting to a MultiBody driveline"
+    annotation (Dialog(tab="Advanced", group="Only for 1D transmission", enable=not includeDrivelineBearing));
 protected
   parameter Boolean includeMount=false "Include the transmission mount connection";
   parameter Boolean includeDrivelineBearing=false "Include the driveline bearing";
@@ -20,8 +21,8 @@ public
     final includeBearingConnector=includeDrivelineBearing or usingMultiBodyDriveline)
     "Connection to the driveline"
     annotation (Placement(transformation(extent={{90,-10},{110,10}})));
-  Modelica.Mechanics.MultiBody.Interfaces.Frame_a transmissionMount if
-    includeMount "Transmission mount connection (optional)"
+  Modelica.Mechanics.MultiBody.Interfaces.Frame_a transmissionMount
+    if includeMount "Transmission mount connection (optional)"
     annotation (Placement(transformation(
         origin={0,-100},
         extent={{-16,-16},{16,16}},

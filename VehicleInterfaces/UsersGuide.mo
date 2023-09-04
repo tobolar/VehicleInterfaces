@@ -36,7 +36,7 @@ Modelica.Mechanics.MultiBody.Interfaces called FlangeWithBearing.
 This connector contains a&nbsp;1D rotational connector and an optional
 MultiBody connector. The MultiBody connector can be enabled/disabled
 via a&nbsp;parameter in the connector definition. In the case of the
-VehicleInterfaces subsystem definitions these parameters are propogated
+VehicleInterfaces subsystem definitions these parameters are propagated
 to the subsystem level so that they can all be set by one parameter.
 The MultiBody connector is used to provide the support for the rotating
 component.
@@ -77,7 +77,7 @@ and allow you access to the connector parameters.
 The control bus structure utilises expandable connectors to provide
 a&nbsp;flexible bus concept. This approach makes it easy to add new signals
 to the control bus so that data can be passed around the model.
-The control bus structure implemented is heirarchical so that signals
+The control bus structure implemented is hierarchical so that signals
 are easily located. The approach adopted is that physical measurements
 taken from, for example, the transmission are placed on a&nbsp;sub-bus
 called <strong>transmissionBus</strong>. Signals output from control
@@ -710,6 +710,42 @@ but the principles are still utilised.
   end Tutorials;
 
   package ReleaseNotes "Release notes"
+    package Version_2_0_1 "Version 2.0.1 (2022-03-15)"
+      extends Modelica.Icons.ReleaseNotes;
+
+      annotation (Documentation(info="<html>
+<p>
+This version requires <strong>version 4.0.0</strong> of the 
+<a href=\"https://github.com/modelica/ModelicaStandardLibrary\">Modelica Standard Library</a>.
+This version is backwards compatible to version 2.0.0 of the
+VehicleInterfaces library. 
+</p>
+
+
+<h4>Improvements in this version</h4>
+<ul>
+  <li>
+    Use unit rev/min instead of r/min for <em>displayUnit</em> of initial engine
+    speed in combustion engine models. This is, thus, compatible to the
+    spelling adapted for angular velocity in some models of the
+    Modelica Standard Library.
+  </li>
+  <li>
+    GitHub issue <a href=\"https://github.com/modelica/VehicleInterfaces/issues/89\">#89</a>:
+    Improve user dialog of road functions in 
+    <a href=\"modelica://VehicleInterfaces.Roads.Interfaces.Base\">Roads.Interfaces.Base</a>
+    and facilitate function redeclaration (choicesAllMatching&nbsp;=&nbsp;true).
+  </li>
+  <li>
+    GitHub issue <a href=\"https://github.com/modelica/VehicleInterfaces/issues/88\">#88</a>:
+    Limit possibility to modify <code>usingMultiBodyXXX</code> parameter
+    in user dialog of base classes of several assemblies. This depends on
+    the setting of <code>includeXXXBearing</code> now.
+  </li>
+</ul>
+</html>"));
+    end Version_2_0_1;
+
     package Version_2_0_0 "Version 2.0.0 (Jun. 26, 2020)"
       extends Modelica.Icons.ReleaseNotes;
 
@@ -1080,10 +1116,10 @@ on the library.
 <h4>Copyright</h4>
 <p>
 &copy; 2005-2013: Dassault Syst&egrave;mes, DLR and Modelon<br>
-&copy; since 2013: Modelica Association
+&copy; 2013-2022: Modelica Association
 </p>
 <h4>License</h4>
-<p>The VehicleInterfaces library is distributed under the Modelica license (Version 1.1)</p>
+<p>The VehicleInterfaces library is distributed under the Modelica License (Version 1.1).</p>
 <p>Redistribution and use in source and binary forms, with or without
 modification are permitted, provided that the following conditions are met:
 </p>

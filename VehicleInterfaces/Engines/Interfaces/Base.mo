@@ -1,11 +1,12 @@
 within VehicleInterfaces.Engines.Interfaces;
 partial model Base "Basic interface definition for an engine"
+
   parameter Boolean usingMultiBodyAccessories=false
-    "=true, if using MultiBody accessories with a 1D engine"
-    annotation (Dialog(tab="Advanced"));
+    "= true, if connecting to a MultiBody accessories"
+    annotation (Dialog(tab="Advanced", group="Only for 1D engine", enable=not includeAccessoriesBearing));
   parameter Boolean usingMultiBodyTransmission=false
-    "=true, if using a MultiBody transmission with a 1D engine"
-    annotation (Dialog(tab="Advanced"));
+    "= true, if connecting to a MultiBody transmission"
+    annotation (Dialog(tab="Advanced", group="Only for 1D engine", enable=not includeTransmissionBearing));
 protected
   parameter Boolean includeAcceleratorPedal=false "Include the accelerator pedal connection";
   parameter Boolean includeMount=false "Include the engine mount connection";
@@ -21,14 +22,14 @@ public
     final includeBearingConnector=true)
     "Connection to the transmission" annotation (Placement(transformation(
           extent={{90,-10},{110,10}})));
-  Modelica.Mechanics.MultiBody.Interfaces.Frame_a engineMount if
-    includeMount "Engine mount connection (optional)"
+  Modelica.Mechanics.MultiBody.Interfaces.Frame_a engineMount
+    if includeMount "Engine mount connection (optional)"
     annotation (Placement(transformation(
         origin={0,-100},
         extent={{-16,-16},{16,16}},
         rotation=90)));
-  Modelica.Mechanics.Translational.Interfaces.Flange_a acceleratorPedal if
-    includeAcceleratorPedal "Accelerator pedal connection (optional)"
+  Modelica.Mechanics.Translational.Interfaces.Flange_a acceleratorPedal
+   if includeAcceleratorPedal "Accelerator pedal connection (optional)"
     annotation (Placement(transformation(extent={{-10,110},{10,90}})));
   VehicleInterfaces.Interfaces.ControlBus controlBus "Control signal bus"
     annotation (Placement(transformation(

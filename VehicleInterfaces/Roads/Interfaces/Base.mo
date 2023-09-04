@@ -1,46 +1,53 @@
 within VehicleInterfaces.Roads.Interfaces;
 partial model Base "Base model for all roads"
 
-  replaceable function position =
-      VehicleInterfaces.Roads.Interfaces.positionBase
-    "Dummy model for road position" annotation (Documentation(info="<html>
-<p>
-Dummy model to demonstrate how the road position should be defined and included in road model.
-</p>
-</html>"));
-
-  replaceable function trackOffset =
-      VehicleInterfaces.Roads.Interfaces.trackOffsetBase
-    "Dummy model for track offset from road centre line" annotation (
+  replaceable function position = Roads.Interfaces.positionBase
+    "Get position vector at a road location" annotation (
+      choicesAllMatching=true,
+      Dialog(tab="Functions"),
       Documentation(info="<html>
 <p>
-Dummy model to demonstrate how the track offset should be defined and included in road model.
+This function returns the road position vector w.r.t world at the road location (s,w).
 </p>
 </html>"));
 
-  replaceable function normal =
-      VehicleInterfaces.Roads.Interfaces.normalBase
-    "Dummy model for unit normal on road" annotation (Documentation(info="<html>
+  replaceable function trackOffset = Roads.Interfaces.trackOffsetBase
+    "Get track offset at a road location" annotation (
+      choicesAllMatching=true,
+      Dialog(tab="Functions"),
+      Documentation(info="<html>
 <p>
-Dummy model to demonstrate how the unit normal should be defined and included in road model.
+This function returns the track offset at the road location (s,w).
 </p>
 </html>"));
 
-  replaceable function headingDirection =
-      VehicleInterfaces.Roads.Interfaces.headingDirectionBase
-    "Dummy model for unit heading direction on road"
-    annotation (Documentation(info="<html>
+  replaceable function normal = Roads.Interfaces.normalBase
+    "Get road normal at a road location" annotation (
+      choicesAllMatching=true,
+      Dialog(tab="Functions"),
+      Documentation(info="<html>
 <p>
-Dummy model to demonstrate how the unit heading direction should be defined and included in road model.
+This function returns the normal vector of the road surface at the road location (s,w).
 </p>
 </html>"));
 
-  replaceable function frictionCoefficient =
-      VehicleInterfaces.Roads.Interfaces.frictionCoefficientBase
-    "Dummy model for friction coefficient on road" annotation (Documentation(
-        info="<html>
+  replaceable function headingDirection = Roads.Interfaces.headingDirectionBase
+    "Get heading direction at a road location" annotation (
+      choicesAllMatching=true,
+      Dialog(tab="Functions"),
+      Documentation(info="<html>
 <p>
-Dummy model to demonstrate how the friction coefficient should be defined and included in road model.
+This function returns the unit heading direction at the road location (s,w).
+</p>
+</html>"));
+
+  replaceable function frictionCoefficient = Roads.Interfaces.frictionCoefficientBase
+    "Get friction coefficient at a road location" annotation (
+      choicesAllMatching=true,
+      Dialog(tab="Functions"),
+      Documentation(info="<html>
+<p>
+This function returns the friction coefficient at the road location (s,w).
 </p>
 </html>"));
 
@@ -50,10 +57,10 @@ Dummy model to demonstrate how the friction coefficient should be defined and in
     Documentation(info="<html>
 <p>
 A vehicle is driving on a road that is described
-as parameterized surface r<sub>0</sub> = r<sub>0</sub>(s, w),
-where (s, w) are the surface parameters. Usually, \"s\"
+as parameterized surface r<sub>0</sub>&nbsp;= r<sub>0</sub>(s,&nbsp;w),
+where (s, w) are the surface parameters. Usually, &quot;s&quot;
 describes the heading direction, i.e., the direction in which the
-vehicle is driving, whereas \"w\" describes the lateral direction
+vehicle is driving, whereas &quot;w&quot; describes the lateral direction
 of the track.
 </p>
 </html>"));
