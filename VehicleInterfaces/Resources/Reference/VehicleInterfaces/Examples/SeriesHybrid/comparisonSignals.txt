@@ -1,0 +1,7 @@
+time
+chassis.body.s
+chassis.dragForces.v_rel
+driveMotor.inductor.i
+engine.flywheel.phi
+engine.flywheel.w
+generator.inductor.i
